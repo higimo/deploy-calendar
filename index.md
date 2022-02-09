@@ -7,7 +7,7 @@ eleventyComputed:
 <div class="container">
 	<ul class="main-links">
 {%- for post in collections.index -%}
-		<li><a href="/{{ post.date }}/">{{ post.date | fullDate }}</li>
+		<li><a href="https://higimo.github.io/deploy-calendar/{{ post.date }}/">{{ post.date | fullDate }}</li>
 {%- endfor -%}
 	</ul>
 </div>
