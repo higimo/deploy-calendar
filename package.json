@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx @11ty/eleventy --output=docs",
+    "dev": "npx @11ty/eleventy --serve",
+    "generate": "node generate-data.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0"
   },
