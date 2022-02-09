@@ -13,8 +13,6 @@ eleventyComputed:
   h1: Когда лучше деплоить в продакшен в {{ title | fullDateDecline }}
 ---
 
-{{ title }}
-
 <table>
 <thead>
 <tr>
