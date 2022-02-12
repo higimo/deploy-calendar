@@ -4,12 +4,10 @@ const START_YEAR = 2022
 const END_YEAR = 2025
 const MAX_DAY_PER_COLUMN = 10
 
-const zodiaks = ['Овен', 'Телец', 'Близнецы', 'Рак', 'Лев', 'Дева', 'Весы', 'Скорпион', 'Змееносец', 'Стрелец', 'Козерог', 'Водолей', 'Рыбы']
+const zodiaks =     ['Овен',  'Телец',  'Близнецы', 'Рак',    'Лев', 'Дева',  'Весы',  'Скорпион', 'Стрелец',     'Козерог',   'Водолей',  'Рыбы']
+const zodiakSlugs = ['aries', 'taurus', 'gemini',   'cancer', 'leo', 'virgo', 'libra', 'scorpio',  'sagittarius', 'capricorn', 'aquarius', 'pisces']
 
-const input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
-
-
-const getDaysByLength = length => Object.keys(new Array(length + 1).fill(0)).map(i => parseInt(i, 10))
+const getDaysByLength = length => Object.keys(new Array(length + 1).fill(0)).map(i => parseInt(i, 10)).slice(1)
 
 /**
  * Example:
@@ -23,7 +21,8 @@ const getDaysInMonth = (dirtyDate) => {
 	return lastDayOfMonth.getDate()
 }
 
-const arrRandom = arr => arr[Math.random() * arr.length | 0]
+const arrSort = (arr, cb) => arr.slice().sort(cb)
+
 const randomInteger = (min, max) => Math.floor(min + Math.random() * (max + 1 - min))
 const shuffle = arr => {
 	const cpyArr = arr.slice(0, arr.length)
@@ -33,15 +32,8 @@ const shuffle = arr => {
 	}
 	return cpyArr
 }
-const chunkArray = (arr, size) => {
-	var results = [];
-	while (arr.length) {
-		results.push(arr.splice(0, size));
-	}
-	return results;
-}
 
-
+const compare = (a, b) => a-b
 
 const getData = (input) => {
 	const good = randomInteger(1, input.length / 2)
@@ -51,9 +43,9 @@ const getData = (input) => {
 	const shuffleArr = shuffle(input)
 
 	return [
-		shuffleArr.slice(0, good).slice(0, randomInteger(2, MAX_DAY_PER_COLUMN)), // good
-		shuffleArr.slice(good, good + normal).slice(0, randomInteger(2, MAX_DAY_PER_COLUMN)), // normal
-		shuffleArr.slice(normal, good + normal + bad).slice(0, randomInteger(2, MAX_DAY_PER_COLUMN)), // bad
+		arrSort(shuffleArr.slice(0, good).slice(0, randomInteger(2, MAX_DAY_PER_COLUMN)), compare), // good
+		arrSort(shuffleArr.slice(good, good + normal).slice(0, randomInteger(2, MAX_DAY_PER_COLUMN)), compare), // normal
+		arrSort(shuffleArr.slice(normal, good + normal + bad).slice(0, randomInteger(2, MAX_DAY_PER_COLUMN)), compare), // bad
 	]
 }
 
@@ -65,9 +57,10 @@ for (var year = START_YEAR; year < END_YEAR; year++) {
 		curValue.date = `${year}-${('0' + month).slice(-2)}`
 		curValue.data = []
 
-		for (let zodiak of zodiaks) {
+		for (let index in zodiaks) {
 			curValue.data.push({
-				name: zodiak,
+				name: zodiaks[index],
+				slug: zodiakSlugs[index],
 				value: getData(getDaysByLength(getDaysInMonth(curValue.date)))
 			})
 		}

@@ -11,11 +11,15 @@
 {% if showNavigation %}
 		<div class="date">
 			<div class="prev">
-				<a href="https://higimo.github.io/deploy-calendar/{{ pagination.previousPageHref }}">{{ pagination.page.previous.date | month }}</a>
+				{% if pagination.href.previous %}
+					<a href="{{ pagination.previousPageHref }}">{{ pagination.page.previous.date | month }}</a>
+				{% endif %}
 			</div>
 			<div class="current">{{ data.date | fullDate }}</div>
 			<div class="next">
-				<a href="https://higimo.github.io/deploy-calendar/{{ pagination.nextPageHref }}">{{ pagination.page.next.date | month }}</a>
+				{% if pagination.href.next %}
+					<a href="{{ pagination.nextPageHref }}">{{ pagination.page.next.date | month }}</a>
+				{% endif %}
 			</div>
 		</div>
 {% endif %}

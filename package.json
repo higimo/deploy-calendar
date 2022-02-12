@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy --output=docs",
-    "dev": "npx @11ty/eleventy --serve",
+    "dev": "npx @11ty/eleventy --output=docs --serve",
     "generate": "node generate-data.js"
   },
   "keywords": [],

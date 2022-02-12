@@ -1,3 +1,18 @@
 <footer>
 	Проект сделал <a href="https://higimo.ru/">Хиги́мо</a>.
 </footer>
+
+{% if isMonth %}
+<script>
+	const curMonth = location.pathname.replace(/.*?20\d\d-(\d\d)\/$/, '$1')
+	if (parseInt(curMonth, 10) === new Date().getMonth() + 1) {
+		console.log('higimo')
+		document.querySelectorAll('.calc').forEach(td => {
+			td.innerHTML = td.innerHTML.replace(
+				new RegExp(`\\b(${new Date().getDate()})\\b`, 'g'),
+				'<b>$1</b>'
+			)
+		})
+	}
+</script>
+{% endif %}

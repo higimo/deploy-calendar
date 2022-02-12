@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<title>{{ title }}</title>
+	{% include './head.njk' %}
+</head>
+<body>
+
+<div class="content">
+	<div class="container">
+		{{ content | safe }}
+	</div>
+	<div class="container no-print">
+		Чтобы получить PDF, достаточно нажать CTRL+P (CMD+P для маков; или кнопку ниже) в браузере и в настройках печати выбрать pdf. Впрочем, невозбранно можно напечатать памятку на бумаге. Подвесить её в рамке над рабочим местом или подарить коллеге.
+		<br />
+		<br />
+		<button onclick="window.print()">Печатать</button>
+	</div>
+</div>
+{% include './footer.njk' %}
+</body>
+</html>
