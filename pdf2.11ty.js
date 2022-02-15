@@ -12,7 +12,6 @@ class Test {
 				alias: 'values',
 				before: function(values) {
 					const res = values.map(i => Object.keys(i)[0])
-					console.log(res)
 					return res
 				},
 			},
@@ -25,7 +24,7 @@ class Test {
 		const filtred = data.collections.jui.find(item => !!item[data.page.url.replace(/\/.*?\/(.*?)\//g, '$1')])
 		const curItem = filtred[Object.keys(filtred)[0]]
 		return (
-			`<h1>Когда лучше деплоить в продакшен ${converZodiac(curItem.name)}</h1>` +
+			`<h1>Когда лучше деплоить в продакшен ${converZodiac(curItem.name)}</h1>` +
 			'<div class="date"><div></div>' +
 			`<div>на ${getFullDate(curItem.date).toLocaleLowerCase()}</div>` +
 			'<div></div></div>' +

@@ -13,6 +13,7 @@ eleventyComputed:
   title: Когда лучше деплоить в продакшен в {{ data.date | fullDateDecline }}
   h1: Когда лучше деплоить в продакшен в {{ data.date | fullDateDecline }}
 ---
+<div class="horizontal-scroll">
 <table>
 <thead>
 <tr>
@@ -40,3 +41,4 @@ eleventyComputed:
 
 </tbody>
 </table>
+</div>

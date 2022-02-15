@@ -104,3 +104,8 @@ h2 {
 .no-print {
 	line-height: 1.5;
 }
+
+.horizontal-scroll {
+	width: 100%;
+	overflow: auto;
+}
