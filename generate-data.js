@@ -52,7 +52,7 @@ const getData = (input) => {
 let result = []
 
 for (var year = START_YEAR; year < END_YEAR; year++) {
-	for (var month = 1; month < 12; month++) {
+	for (var month = 1; month <= 12; month++) {
 		let curValue = {}
 		curValue.date = `${year}-${('0' + month).slice(-2)}`
 		curValue.data = []
