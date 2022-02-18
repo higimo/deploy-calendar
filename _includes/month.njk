@@ -7,7 +7,6 @@
 <body>
 <div class="content">
 	<div class="container">
-		<h1>{{ h1 }}</h1>
 {% if showNavigation %}
 		<div class="date">
 			<div class="prev">
@@ -15,7 +14,6 @@
 					<a href="{{ pagination.previousPageHref }}">{{ pagination.page.previous.date | month }}</a>
 				{% endif %}
 			</div>
-			<div class="current">{{ data.date | fullDate }}</div>
 			<div class="next">
 				{% if pagination.href.next %}
 					<a href="{{ pagination.nextPageHref }}">{{ pagination.page.next.date | month }}</a>
@@ -23,6 +21,7 @@
 			</div>
 		</div>
 {% endif %}
+		<h1>{{ h1 }}</h1>
 {% if showDescription %}
 		<p>
 			Информация адресована тем, кто планирует деплоить в прод в ближайшее время.
