@@ -10,8 +10,8 @@ pagination:
     addAllPagesToCollections: true
 permalink: "/{{ data.date | slug }}/"
 eleventyComputed:
-  title: Когда лучше деплоить в продакшен в {{ data.date | fullDateDecline }}
-  h1: Когда лучше деплоить в продакшен в {{ data.date | fullDateDecline }}
+  title: Когда лучше деплоить в продакшен в {{ data.date | fullDateDecline }}
+  h1: Когда лучше деплоить в продакшен в {{ data.date | fullDateDecline }}
 ---
 <div class="horizontal-scroll">
 <table>
