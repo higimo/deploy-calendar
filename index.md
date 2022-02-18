@@ -11,4 +11,9 @@ eleventyComputed:
 {%- endfor -%}
 	</ul>
 </div>
+{%- if url != '/' -%}
+<script>
+	alert('higi')
+</script>
+{% endif %}
 
