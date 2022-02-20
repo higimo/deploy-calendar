@@ -48,8 +48,10 @@ a:visited {
 
 h1 {
 	text-align: center;
-	margin: 3em 0 0.5em;
+	margin: .5em auto;
 	font-size: 32px;
+	max-width: 560px;
+	text-align: center;
 }
 
 .date {
