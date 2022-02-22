@@ -24,6 +24,11 @@ body {
 	flex: 1 0 auto;
 }
 
+.content b {
+	font-weight: 400;
+	border-bottom: 1px solid #0008;
+}
+
 footer {
 	padding: 16px;
 	text-align: center;
@@ -85,6 +90,7 @@ thead td {
 	max-width: max-content;
 	margin: 32px auto;
 }
+
 h2 {
 	margin: 1em 0 0.5em;
 	font-size: 24px;
