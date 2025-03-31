@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const START_YEAR = 2022
-const END_YEAR = 2025
+const END_YEAR = 2030
 const MAX_DAY_PER_COLUMN = 10
 
 const zodiaks =     ['Овен',  'Телец',  'Близнецы', 'Рак',    'Лев', 'Дева',  'Весы',  'Скорпион', 'Стрелец',     'Козерог',   'Водолей',  'Рыбы']
